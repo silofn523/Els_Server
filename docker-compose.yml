@@ -1,0 +1,38 @@
+services:
+  server-data:
+    image: postgres
+    restart: always
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"  
+    environment:
+      POSTGRES_USER: srfn
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: els
+    networks:
+      - els
+
+  wordpress:
+    image: silofn/els
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: server-data
+      DB_PORT: 5432
+      DB_USERNAME: srfn
+      DB_PASSWORD: root
+      DB_SCHEMA: els
+    depends_on:
+      - server-data
+    networks:
+      - els
+    env_file:
+      - .env
+
+networks:
+  els:
+    driver: bridge

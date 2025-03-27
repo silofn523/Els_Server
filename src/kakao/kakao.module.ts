@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { KakaoService } from './kakao.service'
 import { KakaoController } from './kakao.controller'
 import { Module } from '@nestjs/common'

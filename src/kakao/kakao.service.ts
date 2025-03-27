@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Injectable, InternalServerErrorException, NotAcceptableException } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { Request } from 'express'

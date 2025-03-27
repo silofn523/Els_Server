@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common'
 import { DataService } from './data.service'
 import { DataController } from './data.controller'

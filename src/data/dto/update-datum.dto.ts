@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { ApiProperty, PartialType } from '@nestjs/swagger'
 import { CreateDatumDto } from './create-datum.dto'
 import { IsNotEmpty, IsNumber } from 'class-validator'

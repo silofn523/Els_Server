@@ -1,11 +1,10 @@
+/* eslint-disable prettier/prettier */
 import {
   BaseEntity,
   Column,
   CreateDateColumn,
   Entity,
-  JoinColumn,
   OneToMany,
-  OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from 'typeorm'

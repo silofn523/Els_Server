@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   Controller,
   Get,
@@ -32,7 +33,7 @@ export class DataController {
     await this.dataService.dateGraphCreate(createDatumDto)
 
     return {
-      success: true,
+      success: true
     }
   }
 
@@ -96,7 +97,9 @@ export class DataController {
     summary: '데이터 그래프 삭제.'
   })
   @Delete(':id')
-  public async dateGraphRemove(@Param('id') id: number): Promise<{ success: boolean, body: string }> {
+  public async dateGraphRemove(
+    @Param('id') id: number
+  ): Promise<{ success: boolean; body: string }> {
     const graph = await this.dataService.findOne(id)
 
     if (!graph) {

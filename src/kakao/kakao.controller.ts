@@ -1,16 +1,5 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-  Res,
-  UseGuards,
-  Req,
-  UnauthorizedException
-} from '@nestjs/common'
+/* eslint-disable prettier/prettier */
+import { Controller, Get, Res, UseGuards, Req, UnauthorizedException } from '@nestjs/common'
 import { KakaoService } from './kakao.service'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { Request, Response } from 'express'
@@ -69,6 +58,19 @@ export class KakaoController {
       body: {
         userInfo
       }
+    }
+  }
+
+  @ApiOperation({
+    summary: '쿠키에 저장된 Refresh token 확인',
+  })
+  @Get('get_refresh')
+  getRefreshToken(@Req() req: Request): string {
+    const refreshToken = req.cookies['refreshToken']
+    if (refreshToken) {
+      return `Refresh token: ${refreshToken}`
+    } else {
+      return 'No refresh token found'
     }
   }
 

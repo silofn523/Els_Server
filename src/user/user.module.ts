@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common'
 import { UserService } from './user.service'
 import { UserController } from './user.controller'
@@ -10,4 +11,5 @@ import { User } from './entities/user.entity'
   providers: [UserService],
   exports: [UserService]
 })
+// eslint-disable-next-line prettier/prettier
 export class UserModule {}

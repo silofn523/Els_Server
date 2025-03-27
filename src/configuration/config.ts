@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 export default () => ({
    DB_HOST: process.env.DB_HOST,
    DB_PORT: parseInt(process.env.DB_PORT) || 5432,

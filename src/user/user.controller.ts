@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Controller, Get, Param, Delete, NotFoundException } from '@nestjs/common'
 import { UserService } from './user.service'
 import { User } from './entities/user.entity'

@@ -7,9 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 import { GoogleModule } from './google/google.module'
 import { KakaoModule } from './kakao/kakao.module'
-import { ServeStaticModule } from '@nestjs/serve-static'
-import { join } from 'path'
-import { DataModule } from './data/data.module';
+import { DataModule } from './data/data.module'
 
 @Module({
   imports: [

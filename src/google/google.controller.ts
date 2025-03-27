@@ -1,4 +1,5 @@
-import { Controller, Get, UseGuards, Req, Res, UnauthorizedException } from '@nestjs/common'
+/* eslint-disable prettier/prettier */
+import { Controller, Get, UseGuards, Req, Res, UnauthorizedException, Header } from '@nestjs/common'
 import { Request, Response } from 'express'
 import { GoogleService } from './google.service'
 import { GoogleAuthGuard } from 'src/google/google.guard'
@@ -64,6 +65,20 @@ export class GoogleController {
       body: {
         userInfo
       }
+    }
+  }
+
+  @ApiOperation({
+    summary: '쿠키에 저장된 Refresh token 확인',
+    description: '쓸 일 없을듯.. 누군가 쓸 수도?'
+  })
+  @Get('get_refresh')
+  getRefreshToken(@Req() req: Request): string {
+    const refreshToken = req.cookies['refreshToken']
+    if (refreshToken) {
+      return `Refresh token: ${refreshToken}`
+    } else {
+      return 'No refresh token found'
     }
   }
 

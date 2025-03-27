@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Injectable, NotAcceptableException } from '@nestjs/common'
 import { CreateDatumDto } from './dto/create-datum.dto'
 import { UpdateDatumDto } from './dto/update-datum.dto'

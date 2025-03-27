@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { PassportStrategy } from '@nestjs/passport'
@@ -25,7 +26,7 @@ export class KakaoStrategy extends PassportStrategy(Strategy, 'kakao') {
     accessToken: string,
     refreshToken: string,
     profile: Profile,
-    done: (error: any, user?: any, info?: any) => void
+    done: (error: any, user?: any, info?: any) => void,
   ) {
     try {
       const {

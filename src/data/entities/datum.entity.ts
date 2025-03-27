@@ -1,7 +1,8 @@
+/* eslint-disable prettier/prettier */
 import { ApiProperty } from '@nestjs/swagger'
 import { IsDate, IsNotEmpty, IsNumber } from 'class-validator'
 import { User } from 'src/user/entities/user.entity'
-import { BaseEntity, Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from 'typeorm'
+import { BaseEntity, Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity()
 export class Datum extends BaseEntity {

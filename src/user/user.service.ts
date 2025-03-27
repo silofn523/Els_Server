@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { User } from './entities/user.entity'
@@ -23,10 +24,6 @@ export class UserService {
       profileUrl: user.profileUrl,
       createdAt: user.createdAt
     })
-  }
-
-  public async save(userId: User) {
-    await this.user.save(userId)
   }
 
   public async updateUser(email: string, updateData: UpdateUserDto): Promise<void> {

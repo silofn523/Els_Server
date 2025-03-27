@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
 import * as expressBasicAuth from 'express-basic-auth'
+import * as cookieParser from 'cookie-parser'
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
 
 async function bootstrap() {
@@ -11,6 +12,7 @@ async function bootstrap() {
     credentials: true
   })
 
+  app.use(cookieParser())
   app.use(
     ['/api', '/api-jsom'],
     expressBasicAuth({

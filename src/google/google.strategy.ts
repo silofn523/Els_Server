@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { PassportStrategy } from '@nestjs/passport'
@@ -23,7 +24,7 @@ export class GoogleStratagy extends PassportStrategy(Strategy, 'google') {
   authorizationParams(): { [key: string]: string } {
     return {
       access_type: 'offline',
-      prompt: 'select_account'
+      prompt: 'consent'
     }
   }
 
@@ -31,8 +32,9 @@ export class GoogleStratagy extends PassportStrategy(Strategy, 'google') {
     accessToken: string,
     refreshToken: string,
     profile: Profile,
-    done: VerifyCallback
+    done: VerifyCallback,
   ) {
+
     try {
       const { name, emails, id, provider, photos } = profile
 
